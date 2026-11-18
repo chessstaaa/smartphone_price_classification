@@ -7,4 +7,5 @@ pillow
 plotly
 scikit-learn==1.6.1
 kagglehub
-feature_engine
+xgboost
+feature-engine
