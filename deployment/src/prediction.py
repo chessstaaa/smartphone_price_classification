@@ -4,9 +4,13 @@ import json
 import pandas as pd
 import numpy as np
 import streamlit as st
+import os
 
 # Load the model
-with open("model/model.pkl", "rb") as file:
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+MODEL_PATH = os.path.join(BASE_DIR, "model", "model.pkl")
+
+with open(MODEL_PATH, "rb") as file:
     model = pickle.load(file)
 
 def run():
