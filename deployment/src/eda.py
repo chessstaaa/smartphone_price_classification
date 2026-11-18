@@ -6,9 +6,11 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 import plotly.express as px
 import kagglehub
+import os
 from kagglehub import KaggleDatasetAdapter
 from PIL import Image
 
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 def run():
     # Membuat title
@@ -17,7 +19,7 @@ def run():
     st.write('Author: Chesta')
 
     # Memasukan gambar
-    image = Image.open('img_assets/phone.webp')
+    image = Image.open(os.path.join(BASE_DIR, 'img_assets', 'phone.webp'))
     st.image(image, caption='Smartphone, source: *Wired Italia.*')
 
     # Membuat sub-header
@@ -76,7 +78,7 @@ def run():
     """)
 
     # Memasukan gambar
-    image = Image.open('img_assets/phone-2.jpg')
+    image = Image.open(os.path.join(BASE_DIR, 'img_assets', 'phone-2.jpg'))
     st.image(image, caption='Nothing Phone 2, source: *GSMArena*')
 
     # Distribusi data 'price_range'
